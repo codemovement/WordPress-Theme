@@ -21,6 +21,7 @@ function materialwp_customize_register( $wp_customize ) {
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport' => 'postMessage',
+			 'sanitize_callback' => 'sanitize_hex_color',
         )
     );
 
@@ -30,6 +31,7 @@ function materialwp_customize_register( $wp_customize ) {
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport' => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
         )
     );
 
@@ -39,6 +41,7 @@ function materialwp_customize_register( $wp_customize ) {
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport' => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
         )
     );
 
@@ -48,6 +51,7 @@ function materialwp_customize_register( $wp_customize ) {
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport' => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
         )
     );
 
@@ -55,28 +59,24 @@ function materialwp_customize_register( $wp_customize ) {
 		'label' => __( 'Navigation Background Color', 'materialwp' ),
 		'section' => 'colors',
 		'settings' => 'navigation_background_color',
-        'sanitize_callback' => 'sanitize_hex_color',
 	)));
 
 	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'complimentary_color', array(
 		'label' => __( 'Complimentary Color', 'materialwp' ),
 		'section' => 'colors',
 		'settings' => 'complimentary_color',
-        'sanitize_callback' => 'sanitize_hex_color',
 	)));
 
 	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'link_color', array(
 		'label' => __( 'Link Color', 'materialwp' ),
 		'section' => 'colors',
 		'settings' => 'link_color',
-        'sanitize_callback' => 'sanitize_hex_color',
 	)));
 
     $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'footer_background_color', array(
         'label' => __( 'Footer Background Color', 'materialwp' ),
         'section' => 'colors',
         'settings' => 'footer_background_color',
-        'sanitize_callback' => 'sanitize_hex_color',
     )));
 }
 add_action( 'customize_register', 'materialwp_customize_register' );
