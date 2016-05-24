@@ -1,11 +1,11 @@
 <?php
 /**
- * materialwp functions and definitions
+ * materializedmasonrypk functions and definitions
  *
- * @package materialwp
+ * @package materializedmasonrypk
  */
 
-if ( ! function_exists( 'materialwp_setup' ) ) :
+if ( ! function_exists( 'materializedmasonrypk_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -13,7 +13,7 @@ if ( ! function_exists( 'materialwp_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function materialwp_setup() {
+function materializedmasonrypk_setup() {
 
 	/**
 	* Set the content width based on the theme's design and stylesheet.
@@ -26,10 +26,10 @@ function materialwp_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on materialwp, use a find and replace
-	 * to change 'materialwp' to the name of your theme in all the template files
+	 * If you're building a theme based on materializedmasonrypk, use a find and replace
+	 * to change 'materializedmasonrypk' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'materialwp', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'materializedmasonrypk', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -46,7 +46,7 @@ function materialwp_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'materialwp' ),
+		'primary' => __( 'Primary Menu', 'materializedmasonrypk' ),
 	) );
 
 	/*
@@ -66,22 +66,22 @@ function materialwp_setup() {
 	// ) );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'materialwp_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'materializedmasonrypk_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
 }
-endif; // materialwp_setup
-add_action( 'after_setup_theme', 'materialwp_setup' );
+endif; // materializedmasonrypk_setup
+add_action( 'after_setup_theme', 'materializedmasonrypk_setup' );
 
 /**
  * Register widget area.
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
-function materialwp_widgets_init() {
+function materializedmasonrypk_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'materialwp' ),
+		'name'          => __( 'Sidebar', 'materializedmasonrypk' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s"><div class="panel panel-warning">',
@@ -90,12 +90,12 @@ function materialwp_widgets_init() {
 		'after_title'   => '</h3></div>',
 	) );
 }
-add_action( 'widgets_init', 'materialwp_widgets_init' );
+add_action( 'widgets_init', 'materializedmasonrypk_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function materialwp_scripts() {
+function materializedmasonrypk_scripts() {
 	wp_enqueue_style( 'mwp-bootstrap-styles', get_template_directory_uri() . '/bower_components/bootstrap/dist/css/bootstrap.min.css', array(), '3.3.6', 'all' );
 
 	wp_enqueue_style( 'mwp-roboto-styles', get_template_directory_uri() . '/bower_components/bootstrap-material-design/dist/css/roboto.min.css', array(), '', 'all' );
@@ -104,7 +104,7 @@ function materialwp_scripts() {
 
 	wp_enqueue_style( 'mwp-ripples-styles', get_template_directory_uri() . '/bower_components/bootstrap-material-design/dist/css/ripples.min.css', array(), '', 'all' );
 
-	wp_enqueue_style( 'materialwp-style', get_stylesheet_uri(), array() );
+	wp_enqueue_style( 'materializedmasonrypk-style', get_stylesheet_uri(), array() );
 
 	wp_enqueue_script( 'mwp-bootstrap-js', get_template_directory_uri() . '/bower_components/bootstrap/dist/js/bootstrap.min.js', array('jquery'), '3.3.6', true );
 
@@ -120,7 +120,7 @@ function materialwp_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'materialwp_scripts' );
+add_action( 'wp_enqueue_scripts', 'materializedmasonrypk_scripts' );
 
 /**
  * Implement the Custom Header feature.
@@ -160,7 +160,7 @@ require get_template_directory() . '/inc/comments-callback.php';
 /**
  * Registers an editor stylesheet for the theme.
  */
-function materialwp_theme_add_editor_styles() {
+function materializedmasonrypk_theme_add_editor_styles() {
     add_editor_style( 'css/editor-style.css' );
 }
-add_action( 'admin_init', 'materialwp_theme_add_editor_styles' );
+add_action( 'admin_init', 'materializedmasonrypk_theme_add_editor_styles' );
