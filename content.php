@@ -1,6 +1,6 @@
 <?php
 /**
- * @package materializedmasonrypk
+ * @package masonrypk
  */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -20,7 +20,7 @@
 
 				<?php if ( 'post' == get_post_type() ) : ?>
 				<div class="entry-meta">
-					<?php materializedmasonrypk_posted_on(); ?>
+					<?php masonrypk_posted_on(); ?>
 				</div><!-- .entry-meta -->
 				<?php endif; ?>
 			</header><!-- .entry-header -->
@@ -29,7 +29,7 @@
 				<?php
 					if ( is_singular() ) {
 						the_content( sprintf(
-							__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'materializedmasonrypk' ),
+							__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'masonrypk' ),
 							the_title( '<span class="screen-reader-text">"', '"</span>', false )
 						) );
 					}else{
@@ -39,14 +39,14 @@
 
 				<?php
 					wp_link_pages( array(
-						'before' => '<div class="page-links">' . __( 'Pages:', 'materializedmasonrypk' ),
+						'before' => '<div class="page-links">' . __( 'Pages:', 'masonrypk' ),
 						'after'  => '</div>',
 					) );
 				?>
 			</div><!-- .entry-content -->
 
 			<footer class="entry-footer">
-				<?php materializedmasonrypk_entry_footer(); ?>
+				<?php masonrypk_entry_footer(); ?>
 			</footer><!-- .entry-footer -->
 			<?php echo modify_read_more_link(); ?>
 		</div> <!-- .entry-container -->

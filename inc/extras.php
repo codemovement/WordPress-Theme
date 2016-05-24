@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features
  *
- * @package materializedmasonrypk
+ * @package masonrypk
  */
 
 /**
@@ -13,11 +13,11 @@
  * @param array $args Configuration arguments.
  * @return array
  */
-function materializedmasonrypk_page_menu_args( $args ) {
+function masonrypk_page_menu_args( $args ) {
 	$args['show_home'] = true;
 	return $args;
 }
-add_filter( 'wp_page_menu_args', 'materializedmasonrypk_page_menu_args' );
+add_filter( 'wp_page_menu_args', 'masonrypk_page_menu_args' );
 
 /**
  * Adds custom classes to the array of body classes.
@@ -25,7 +25,7 @@ add_filter( 'wp_page_menu_args', 'materializedmasonrypk_page_menu_args' );
  * @param array $classes Classes for the body element.
  * @return array
  */
-function materializedmasonrypk_body_classes( $classes ) {
+function masonrypk_body_classes( $classes ) {
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
@@ -33,7 +33,7 @@ function materializedmasonrypk_body_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', 'materializedmasonrypk_body_classes' );
+add_filter( 'body_class', 'masonrypk_body_classes' );
 
 if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	/**
@@ -43,7 +43,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	 * @param string $sep Optional separator.
 	 * @return string The filtered title.
 	 */
-	function materializedmasonrypk_wp_title( $title, $sep ) {
+	function masonrypk_wp_title( $title, $sep ) {
 		if ( is_feed() ) {
 			return $title;
 		}
@@ -61,12 +61,12 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 
 		// Add a page number if necessary.
 		if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-			$title .= " $sep " . sprintf( esc_html__( 'Page %s', 'materializedmasonrypk' ), max( $paged, $page ) );
+			$title .= " $sep " . sprintf( esc_html__( 'Page %s', 'masonrypk' ), max( $paged, $page ) );
 		}
 
 		return $title;
 	}
-	add_filter( 'wp_title', 'materializedmasonrypk_wp_title', 10, 2 );
+	add_filter( 'wp_title', 'masonrypk_wp_title', 10, 2 );
 
 	/**
 	 * Title shim for sites older than WordPress 4.1.
@@ -74,12 +74,12 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	 * @link https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
 	 * @todo Remove this function when WordPress 4.3 is released.
 	 */
-	function materializedmasonrypk_render_title() {
+	function masonrypk_render_title() {
 		?>
 		<title><?php wp_title( '|', true, 'right' ); ?></title>
 		<?php
 	}
-	add_action( 'wp_head', 'materializedmasonrypk_render_title' );
+	add_action( 'wp_head', 'masonrypk_render_title' );
 endif;
 
 /**
@@ -94,14 +94,14 @@ endif;
  * @global WP_Query $wp_query WordPress Query object.
  * @return void
  */
-function materializedmasonrypk_setup_author() {
+function masonrypk_setup_author() {
 	global $wp_query;
 
 	if ( $wp_query->is_author() && isset( $wp_query->post ) ) {
 		$GLOBALS['authordata'] = get_userdata( $wp_query->post->post_author );
 	}
 }
-add_action( 'wp', 'materializedmasonrypk_setup_author' );
+add_action( 'wp', 'masonrypk_setup_author' );
 
 /**
  * Adds a class to the previous post link on single post page
@@ -142,7 +142,7 @@ add_filter('next_posts_link_attributes', 'posts_link_attributes_next');
  */
 function modify_read_more_link() {
 
-	return '<p><a class="btn btn-danger btn-xs read-more" href="' . get_permalink() . '">'.__( 'Read More', 'materializedmasonrypk' ).'</a></p>';
+	return '<p><a class="btn btn-danger btn-xs read-more" href="' . get_permalink() . '">'.__( 'Read More', 'masonrypk' ).'</a></p>';
 }
 add_filter( 'the_content_more_link', 'modify_read_more_link' );
 

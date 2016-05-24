@@ -8,7 +8,7 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package materializedmasonrypk
+ * @package masonrypk
  */
 
 get_header(); ?>
@@ -34,7 +34,7 @@ get_header(); ?>
 
 				<?php endwhile; ?>
 
-				<?php materializedmasonrypk_paging_nav(); ?>
+				<?php masonrypk_paging_nav(); ?>
 
 			<?php else : ?>
 
