@@ -40,7 +40,6 @@
 					<?php
 			            wp_nav_menu( array(
 			                'theme_location'    => 'primary',
-			                'depth'             => 2,
 			                'container'         => false,
 			                'menu_class'        => 'nav navbar-nav navbar-left',
 			                'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',

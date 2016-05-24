@@ -1,0 +1,7 @@
+body#tinymce.wp-editor { 
+    font-family: RobotoDraft,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;
+	font-weight: 300; 
+}
+body#tinymce.wp-editor h1{ 
+	font-size: 36px;
+}
