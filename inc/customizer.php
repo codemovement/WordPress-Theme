@@ -1,8 +1,8 @@
 <?php
 /**
- * materialwp Theme Customizer
+ * materializedmasonrypk Theme Customizer
  *
- * @package materialwp
+ * @package materializedmasonrypk
  */
 
 /**
@@ -10,7 +10,7 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function materialwp_customize_register( $wp_customize ) {
+function materializedmasonrypk_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -56,40 +56,40 @@ function materialwp_customize_register( $wp_customize ) {
     );
 
     $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'navigation_background_color', array(
-		'label' => __( 'Navigation Background Color', 'materialwp' ),
+		'label' => __( 'Navigation Background Color', 'materializedmasonrypk' ),
 		'section' => 'colors',
 		'settings' => 'navigation_background_color',
 	)));
 
 	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'complimentary_color', array(
-		'label' => __( 'Complimentary Color', 'materialwp' ),
+		'label' => __( 'Complimentary Color', 'materializedmasonrypk' ),
 		'section' => 'colors',
 		'settings' => 'complimentary_color',
 	)));
 
 	$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'link_color', array(
-		'label' => __( 'Link Color', 'materialwp' ),
+		'label' => __( 'Link Color', 'materializedmasonrypk' ),
 		'section' => 'colors',
 		'settings' => 'link_color',
 	)));
 
     $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'footer_background_color', array(
-        'label' => __( 'Footer Background Color', 'materialwp' ),
+        'label' => __( 'Footer Background Color', 'materializedmasonrypk' ),
         'section' => 'colors',
         'settings' => 'footer_background_color',
     )));
 }
-add_action( 'customize_register', 'materialwp_customize_register' );
+add_action( 'customize_register', 'materializedmasonrypk_customize_register' );
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
-function materialwp_customize_preview_js() {
-	wp_enqueue_script( 'materialwp_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
+function materializedmasonrypk_customize_preview_js() {
+	wp_enqueue_script( 'materializedmasonrypk_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
 }
-add_action( 'customize_preview_init', 'materialwp_customize_preview_js' );
+add_action( 'customize_preview_init', 'materializedmasonrypk_customize_preview_js' );
 
-function materialwp_customize_colors(){
+function materializedmasonrypk_customize_colors(){
 
 ?>
 <style type="text/css">
@@ -102,4 +102,4 @@ function materialwp_customize_colors(){
 </style>
 <?php
 }
-add_action( 'wp_head', 'materialwp_customize_colors' );
+add_action( 'wp_head', 'materializedmasonrypk_customize_colors' );
