@@ -4,29 +4,29 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package materializedmasonrypk
+ * @package masonrypk
  */
 
-if ( ! function_exists( 'materializedmasonrypk_paging_nav' ) ) :
+if ( ! function_exists( 'masonrypk_paging_nav' ) ) :
 /**
  * Display navigation to next/previous set of posts when applicable.
  */
-function materializedmasonrypk_paging_nav() {
+function masonrypk_paging_nav() {
 	// Don't print empty markup if there's only one page.
 	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
 		return;
 	}
 	?>
 	<nav class="navigation paging-navigation clear" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'materializedmasonrypk' ); ?></h1>
+		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'masonrypk' ); ?></h1>
 		<div class="nav-links">
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-previous"><?php previous_posts_link( __( '', 'materializedmasonrypk' ) ); ?></div>
+			<div class="nav-previous"><?php previous_posts_link( __( '', 'masonrypk' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-next"><?php next_posts_link( __( '', 'materializedmasonrypk' ) ); ?></div>
+			<div class="nav-next"><?php next_posts_link( __( '', 'masonrypk' ) ); ?></div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
@@ -35,11 +35,11 @@ function materializedmasonrypk_paging_nav() {
 }
 endif;
 
-if ( ! function_exists( 'materializedmasonrypk_post_nav' ) ) :
+if ( ! function_exists( 'masonrypk_post_nav' ) ) :
 /**
  * Display navigation to next/previous post when applicable.
  */
-function materializedmasonrypk_post_nav() {
+function masonrypk_post_nav() {
 	// Don't print empty markup if there's nowhere to navigate.
 	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
 	$next     = get_adjacent_post( false, '', false );
@@ -49,11 +49,11 @@ function materializedmasonrypk_post_nav() {
 	}
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'materializedmasonrypk' ); ?></h1>
+		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'masonrypk' ); ?></h1>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', _x( '', 'Previous post link', 'materializedmasonrypk' ) );
-				next_post_link(     '<div class="nav-next">%link</div>',     _x( '', 'Next post link',     'materializedmasonrypk' ) );
+				previous_post_link( '<div class="nav-previous">%link</div>', _x( '', 'Previous post link', 'masonrypk' ) );
+				next_post_link(     '<div class="nav-next">%link</div>',     _x( '', 'Next post link',     'masonrypk' ) );
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
@@ -61,11 +61,11 @@ function materializedmasonrypk_post_nav() {
 }
 endif;
 
-if ( ! function_exists( 'materializedmasonrypk_posted_on' ) ) :
+if ( ! function_exists( 'masonrypk_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
-function materializedmasonrypk_posted_on() {
+function masonrypk_posted_on() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
@@ -79,12 +79,12 @@ function materializedmasonrypk_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		_x( '<i class="mdi-action-schedule"></i> %s', 'post date', 'materializedmasonrypk' ),
+		_x( '<i class="mdi-action-schedule"></i> %s', 'post date', 'masonrypk' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
 	$byline = sprintf(
-		_x( '<i class="mdi-action-account-circle"></i> %s', 'post author', 'materializedmasonrypk' ),
+		_x( '<i class="mdi-action-account-circle"></i> %s', 'post author', 'masonrypk' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
@@ -92,36 +92,36 @@ function materializedmasonrypk_posted_on() {
 
 	if ( 'post' == get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( __( ', ', 'materializedmasonrypk' ) );
-		if ( $categories_list && materializedmasonrypk_categorized_blog() ) {
-			printf( '<span class="cat-links">' . __( '<i class="mdi-file-folder-open"></i> %1$s', 'materializedmasonrypk' ) . '</span>', $categories_list );
+		$categories_list = get_the_category_list( __( ', ', 'masonrypk' ) );
+		if ( $categories_list && masonrypk_categorized_blog() ) {
+			printf( '<span class="cat-links">' . __( '<i class="mdi-file-folder-open"></i> %1$s', 'masonrypk' ) . '</span>', $categories_list );
 		}
 	}
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link"><i class="mdi-action-question-answer"></i> ';
-		comments_popup_link( __( 'Leave a comment', 'materializedmasonrypk' ), __( '1 Comment', 'materializedmasonrypk' ), __( '% Comments', 'materializedmasonrypk' ) );
+		comments_popup_link( __( 'Leave a comment', 'masonrypk' ), __( '1 Comment', 'masonrypk' ), __( '% Comments', 'masonrypk' ) );
 		echo '</span>';
 	}
 
 }
 endif;
 
-if ( ! function_exists( 'materializedmasonrypk_entry_footer' ) ) :
+if ( ! function_exists( 'masonrypk_entry_footer' ) ) :
 /**
  * Prints HTML for edit link.
  */
-function materializedmasonrypk_entry_footer() {
+function masonrypk_entry_footer() {
 
 	if ( 'post' == get_post_type() ) {
 	/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', __( ', ', 'materializedmasonrypk' ) );
+		$tags_list = get_the_tag_list( '', __( ', ', 'masonrypk' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . __( '<i class="mdi-maps-local-offer"></i> %1$s', 'materializedmasonrypk' ) . '</span>', $tags_list );
+			printf( '<span class="tags-links">' . __( '<i class="mdi-maps-local-offer"></i> %1$s', 'masonrypk' ) . '</span>', $tags_list );
 		}
 	}
 
-	edit_post_link( __( 'Edit', 'materializedmasonrypk' ), '<span class="edit-link">', '</span>' );
+	edit_post_link( __( 'Edit', 'masonrypk' ), '<span class="edit-link">', '</span>' );
 }
 endif;
 
@@ -138,43 +138,43 @@ if ( ! function_exists( 'the_archive_title' ) ) :
  */
 function the_archive_title( $before = '', $after = '' ) {
 	if ( is_category() ) {
-		$title = sprintf( __( 'Category: %s', 'materializedmasonrypk' ), single_cat_title( '', false ) );
+		$title = sprintf( __( 'Category: %s', 'masonrypk' ), single_cat_title( '', false ) );
 	} elseif ( is_tag() ) {
-		$title = sprintf( __( 'Tag: %s', 'materializedmasonrypk' ), single_tag_title( '', false ) );
+		$title = sprintf( __( 'Tag: %s', 'masonrypk' ), single_tag_title( '', false ) );
 	} elseif ( is_author() ) {
-		$title = sprintf( __( 'Author: %s', 'materializedmasonrypk' ), '<span class="vcard">' . get_the_author() . '</span>' );
+		$title = sprintf( __( 'Author: %s', 'masonrypk' ), '<span class="vcard">' . get_the_author() . '</span>' );
 	} elseif ( is_year() ) {
-		$title = sprintf( __( 'Year: %s', 'materializedmasonrypk' ), get_the_date( _x( 'Y', 'yearly archives date format', 'materializedmasonrypk' ) ) );
+		$title = sprintf( __( 'Year: %s', 'masonrypk' ), get_the_date( _x( 'Y', 'yearly archives date format', 'masonrypk' ) ) );
 	} elseif ( is_month() ) {
-		$title = sprintf( __( 'Month: %s', 'materializedmasonrypk' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'materializedmasonrypk' ) ) );
+		$title = sprintf( __( 'Month: %s', 'masonrypk' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'masonrypk' ) ) );
 	} elseif ( is_day() ) {
-		$title = sprintf( __( 'Day: %s', 'materializedmasonrypk' ), get_the_date( _x( 'F j, Y', 'daily archives date format', 'materializedmasonrypk' ) ) );
+		$title = sprintf( __( 'Day: %s', 'masonrypk' ), get_the_date( _x( 'F j, Y', 'daily archives date format', 'masonrypk' ) ) );
 	} elseif ( is_tax( 'post_format', 'post-format-aside' ) ) {
-		$title = _x( 'Asides', 'post format archive title', 'materializedmasonrypk' );
+		$title = _x( 'Asides', 'post format archive title', 'masonrypk' );
 	} elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) {
-		$title = _x( 'Galleries', 'post format archive title', 'materializedmasonrypk' );
+		$title = _x( 'Galleries', 'post format archive title', 'masonrypk' );
 	} elseif ( is_tax( 'post_format', 'post-format-image' ) ) {
-		$title = _x( 'Images', 'post format archive title', 'materializedmasonrypk' );
+		$title = _x( 'Images', 'post format archive title', 'masonrypk' );
 	} elseif ( is_tax( 'post_format', 'post-format-video' ) ) {
-		$title = _x( 'Videos', 'post format archive title', 'materializedmasonrypk' );
+		$title = _x( 'Videos', 'post format archive title', 'masonrypk' );
 	} elseif ( is_tax( 'post_format', 'post-format-quote' ) ) {
-		$title = _x( 'Quotes', 'post format archive title', 'materializedmasonrypk' );
+		$title = _x( 'Quotes', 'post format archive title', 'masonrypk' );
 	} elseif ( is_tax( 'post_format', 'post-format-link' ) ) {
-		$title = _x( 'Links', 'post format archive title', 'materializedmasonrypk' );
+		$title = _x( 'Links', 'post format archive title', 'masonrypk' );
 	} elseif ( is_tax( 'post_format', 'post-format-status' ) ) {
-		$title = _x( 'Statuses', 'post format archive title', 'materializedmasonrypk' );
+		$title = _x( 'Statuses', 'post format archive title', 'masonrypk' );
 	} elseif ( is_tax( 'post_format', 'post-format-audio' ) ) {
-		$title = _x( 'Audio', 'post format archive title', 'materializedmasonrypk' );
+		$title = _x( 'Audio', 'post format archive title', 'masonrypk' );
 	} elseif ( is_tax( 'post_format', 'post-format-chat' ) ) {
-		$title = _x( 'Chats', 'post format archive title', 'materializedmasonrypk' );
+		$title = _x( 'Chats', 'post format archive title', 'masonrypk' );
 	} elseif ( is_post_type_archive() ) {
-		$title = sprintf( __( 'Archives: %s', 'materializedmasonrypk' ), post_type_archive_title( '', false ) );
+		$title = sprintf( __( 'Archives: %s', 'masonrypk' ), post_type_archive_title( '', false ) );
 	} elseif ( is_tax() ) {
 		$tax = get_taxonomy( get_queried_object()->taxonomy );
 		/* translators: 1: Taxonomy singular name, 2: Current taxonomy term */
-		$title = sprintf( __( '%1$s: %2$s', 'materializedmasonrypk' ), $tax->labels->singular_name, single_term_title( '', false ) );
+		$title = sprintf( __( '%1$s: %2$s', 'masonrypk' ), $tax->labels->singular_name, single_term_title( '', false ) );
 	} else {
-		$title = __( 'Archives', 'materializedmasonrypk' );
+		$title = __( 'Archives', 'masonrypk' );
 	}
 
 	/**
@@ -222,8 +222,8 @@ endif;
  *
  * @return bool
  */
-function materializedmasonrypk_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'materializedmasonrypk_categories' ) ) ) {
+function masonrypk_categorized_blog() {
+	if ( false === ( $all_the_cool_cats = get_transient( 'masonrypk_categories' ) ) ) {
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( array(
 			'fields'     => 'ids',
@@ -236,27 +236,27 @@ function materializedmasonrypk_categorized_blog() {
 		// Count the number of categories that are attached to the posts.
 		$all_the_cool_cats = count( $all_the_cool_cats );
 
-		set_transient( 'materializedmasonrypk_categories', $all_the_cool_cats );
+		set_transient( 'masonrypk_categories', $all_the_cool_cats );
 	}
 
 	if ( $all_the_cool_cats > 1 ) {
-		// This blog has more than 1 category so materializedmasonrypk_categorized_blog should return true.
+		// This blog has more than 1 category so masonrypk_categorized_blog should return true.
 		return true;
 	} else {
-		// This blog has only 1 category so materializedmasonrypk_categorized_blog should return false.
+		// This blog has only 1 category so masonrypk_categorized_blog should return false.
 		return false;
 	}
 }
 
 /**
- * Flush out the transients used in materializedmasonrypk_categorized_blog.
+ * Flush out the transients used in masonrypk_categorized_blog.
  */
-function materializedmasonrypk_category_transient_flusher() {
+function masonrypk_category_transient_flusher() {
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 		return;
 	}
 	// Like, beat it. Dig?
-	delete_transient( 'materializedmasonrypk_categories' );
+	delete_transient( 'masonrypk_categories' );
 }
-add_action( 'edit_category', 'materializedmasonrypk_category_transient_flusher' );
-add_action( 'save_post',     'materializedmasonrypk_category_transient_flusher' );
+add_action( 'edit_category', 'masonrypk_category_transient_flusher' );
+add_action( 'save_post',     'masonrypk_category_transient_flusher' );

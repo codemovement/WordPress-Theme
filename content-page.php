@@ -2,7 +2,7 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package materializedmasonrypk
+ * @package masonrypk
  */
 ?>
 
@@ -24,14 +24,14 @@
 				<?php the_content(); ?>
 				<?php
 					wp_link_pages( array(
-						'before' => '<div class="page-links">' . __( 'Pages:', 'materializedmasonrypk' ),
+						'before' => '<div class="page-links">' . __( 'Pages:', 'masonrypk' ),
 						'after'  => '</div>',
 					) );
 				?>
 			</div><!-- .entry-content -->
 
 			<footer class="entry-footer">
-				<?php edit_post_link( __( 'Edit', 'materializedmasonrypk' ), '<span class="edit-link">', '</span>' ); ?>
+				<?php edit_post_link( __( 'Edit', 'masonrypk' ), '<span class="edit-link">', '</span>' ); ?>
 			</footer><!-- .entry-footer -->
 		</div> <!-- .entry-container -->
 	</div> <!-- .card -->
