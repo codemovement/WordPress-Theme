@@ -919,9 +919,7 @@ Portfolio
     -moz-border-radius:6px 0 6px 6px;
     border-radius:6px 0 6px 6px;
 }
-ul.nav li.dropdown:hover > ul.dropdown-menu {
-    display: block;    
-}
+
 
 /***************** EOF DROPDOWN STYLING ************/
 
@@ -963,6 +961,9 @@ Media Queries
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
 	.home .grid-item, .blog .grid-item{ width: 50%; }
+	ul.nav li.dropdown:hover > ul.dropdown-menu {
+    	display: block;    
+	}
 }
 
 /* Large Devices, Wide Screens */
