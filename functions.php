@@ -156,3 +156,11 @@ require get_template_directory() . '/inc/bootstrap-walker.php';
  * Comments Callback.
  */
 require get_template_directory() . '/inc/comments-callback.php';
+
+/**
+ * Registers an editor stylesheet for the theme.
+ */
+function materialwp_theme_add_editor_styles() {
+    add_editor_style( 'css/editor-style.css' );
+}
+add_action( 'admin_init', 'materialwp_theme_add_editor_styles' );
