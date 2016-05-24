@@ -1,23 +1,24 @@
 /*
-Theme Name: MaterialWP
-Theme URI: http://materialwp.com
-Author: Brad Williams
-Author URI: http://braginteractive.com
-Description: Material Design WordPress Theme
-Version: 0.0.4
+Theme Name: Materialized Masonry PK
+Theme URI: http://www.codemovement.pk
+Author: Code Movement
+Author URI: http://www.codemovement.pk/
+Description: Material Design based on Mansonry Cascading grid layout WordPress Theme for Blog. 
+Version: 0.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: materialwp
+Text Domain: materializedmasonrypk
 Tags: right-sidebar, fluid-layout, responsive-layout, custom-menu, full-width-template, sticky-post, theme-options, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-MaterialWP is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
+MaterializedMasonryPK is based on MaterialWP http://materializedmasonrypk.com/ and Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
 
 Resetting and rebuilding styles have been helped along thanks to the fine work of
 Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
 along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+plus Masonry Layout http://masonry.desandro.com/
 and Blueprint http://www.blueprintcss.org/
 */
 
@@ -866,7 +867,6 @@ Portfolio
     display: block;
     float: left;
     padding: 7px;
-    width: 33%;
     margin: 0;
 }
 .archive .grid-item {
@@ -890,9 +890,9 @@ Portfolio
     -moz-border-radius:0 6px 6px 6px;
     border-radius:0 6px 6px 6px;
 }
-.dropdown-submenu:hover>.dropdown-menu {
+/*.dropdown-submenu:hover>.dropdown-menu {
     display:block;
-}
+}*/
 .dropdown-submenu>a:after {
     display:block;
     content:" ";
@@ -934,6 +934,11 @@ Media Queries
 		margin-bottom: 20px;
 	}
 	.home .grid-item, .blog .grid-item{ width: 100%; }
+	
+	.nav .open.dropdown-submenu > a, .nav .open.dropdown-submenu > a:focus, .nav .open.dropdown-submenu > a:hover{
+		color: #3F51B5 !important; background-color: #fff !important;			
+	}
+	.nav .open.dropdown-submenu > .dropdown-menu li > a{ padding-left: 35px !important;}
 }
 
 /* Extra Small Devices, Phones */ 
@@ -952,14 +957,17 @@ Media Queries
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px) {
 	.home .grid-item, .blog .grid-item{ width: 50%; }
+	ul.nav li.dropdown:hover > ul.dropdown-menu {
+    	display: block;    
+	}
+	.dropdown-submenu:hover>.dropdown-menu {
+    	display:block;
+	}
 }
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
-	.home .grid-item, .blog .grid-item{ width: 50%; }
-	ul.nav li.dropdown:hover > ul.dropdown-menu {
-    	display: block;    
-	}
+	.home .grid-item, .blog .grid-item{ width: 50%; }	
 }
 
 /* Large Devices, Wide Screens */
