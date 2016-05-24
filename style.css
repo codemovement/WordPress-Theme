@@ -862,7 +862,7 @@ Portfolio
   display: block;
   clear: both;
 }
-.home .grid-item {
+.home .grid-item, .blog .grid-item {
     display: block;
     float: left;
     padding: 7px;
@@ -886,7 +886,7 @@ Media Queries
 	#primary{
 		margin-bottom: 20px;
 	}
-	.home .grid-item{ width: 100%; }
+	.home .grid-item, .blog .grid-item{ width: 100%; }
 }
 
 /* Extra Small Devices, Phones */ 
@@ -899,26 +899,20 @@ Media Queries
 	.portfolio-list .mix h4 a {
 		font-size: 18px;
 	}
-	.home .grid-item{ width: 100%; }
+	.home .grid-item, .blog .grid-item{ width: 100%; }
 }
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px) {
-	.home .grid-item{ width: 50%; }
+	.home .grid-item, .blog .grid-item{ width: 50%; }
 }
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
-	.home .grid-item{ width: 50%; }
+	.home .grid-item, .blog .grid-item{ width: 50%; }
 }
-
-/* Max Medium Devices, Desktops */
-// @media only screen and (max-width : 992px) {
-// 	.home .grid-item{ width: 50%; }
-// }
-
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px) {
-	.home .grid-item{ width: 33.33%; }
+	.home .grid-item, .blog .grid-item{ width: 33.33%; }
 }
