@@ -911,7 +911,7 @@ Portfolio
     border-left-color:#ffffff;
 }
 .dropdown-submenu.pull-left {
-    float:none;
+    float:none !important;
 }
 .dropdown-submenu.pull-left>.dropdown-menu {
     left:-100%;
@@ -924,10 +924,6 @@ Portfolio
 
 /***************** EOF DROPDOWN STYLING ************/
 
-.sticky .entry-title {
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 5px;
-}
 
 /*--------------------------------------------------------------
 Media Queries 
