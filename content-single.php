@@ -1,6 +1,6 @@
 <?php
 /**
- * @package materializedmasonrypk
+ * @package masonrypk
  */
 ?>
 
@@ -18,7 +18,7 @@
 				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
 				<div class="entry-meta">
-					<?php materializedmasonrypk_posted_on(); ?>
+					<?php masonrypk_posted_on(); ?>
 				</div><!-- .entry-meta -->
 			</header><!-- .entry-header -->
 
@@ -26,14 +26,14 @@
 				<?php the_content(); ?>
 				<?php
 					wp_link_pages( array(
-						'before' => '<div class="page-links">' . __( 'Pages:', 'materializedmasonrypk' ),
+						'before' => '<div class="page-links">' . __( 'Pages:', 'masonrypk' ),
 						'after'  => '</div>',
 					) );
 				?>
 			</div><!-- .entry-content -->
 
 			<footer class="entry-footer">
-				<?php materializedmasonrypk_entry_footer(); ?>
+				<?php masonrypk_entry_footer(); ?>
 			</footer><!-- .entry-footer -->
 		</div> <!-- .entry-container -->
 	</div> <!-- .card -->
