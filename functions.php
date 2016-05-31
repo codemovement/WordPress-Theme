@@ -70,6 +70,9 @@ function masonrypk_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+
+	// Suport for WordPress 4.5+ to display logo
+	add_theme_support( 'custom-logo' );
 }
 endif; // masonrypk_setup
 add_action( 'after_setup_theme', 'masonrypk_setup' );

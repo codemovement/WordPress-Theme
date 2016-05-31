@@ -1,8 +1,8 @@
 /*
 Theme Name: Masonry PK
-Theme URI: http://www.codemovement.pk
+Theme URI: http://codemovement.pk
 Author: Code Movement
-Author URI: http://www.codemovement.pk/
+Author URI: http://codemovement.pk/
 Description: Material Design based on Mansonry Cascading grid layout WordPress Theme for Blog. 
 Version: 0.0.1
 License: GNU General Public License v2 or later
@@ -312,6 +312,12 @@ a:active {
 .main-navigation .current_page_item > a,
 .main-navigation .current-menu-item > a,
 .main-navigation .current_page_ancestor > a {
+}
+
+.navbar-brand>img {
+    display: block;
+    height: 100%;
+    width: auto;
 }
 
 /* Small menu */
@@ -890,9 +896,6 @@ Portfolio
     -moz-border-radius:0 6px 6px 6px;
     border-radius:0 6px 6px 6px;
 }
-.dropdown-submenu:hover>.dropdown-menu {
-    display:block;
-}
 .dropdown-submenu>a:after {
     display:block;
     content:" ";
@@ -934,15 +937,23 @@ Media Queries
 		margin-bottom: 20px;
 	}
 	.home .grid-item, .blog .grid-item{ width: 100%; }
+	.nav .open.dropdown-submenu > a, .nav .open.dropdown-submenu > a:focus, .nav .open.dropdown-submenu > a:hover{
+ 		color: #3F51B5 !important; background-color: #fff !important;			
+ 	}
+ 	.nav .open.dropdown-submenu > .dropdown-menu li > a{ padding-left: 35px !important;}
+ 	.open.dropdown-submenu>a:after {  
+		transform: rotate(90deg);
+		-ms-transform: rotate(7deg); / IE 9 /
+		-webkit-transform: rotate(7deg); / Chrome, Safari, Opera /
+		border-color: transparent transparent transparent #000 !important;
+	}
 }
 
 /* Extra Small Devices, Phones */ 
 @media only screen and (min-width : 480px) {
-
 	.portfolio-list .mix h4 {
 		padding: 20px;
 	}
-
 	.portfolio-list .mix h4 a {
 		font-size: 18px;
 	}
@@ -952,14 +963,17 @@ Media Queries
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px) {
 	.home .grid-item, .blog .grid-item{ width: 50%; }
+	ul.nav li.dropdown:hover > ul.dropdown-menu {
+     	display: block;    
+ 	}
+ 	.dropdown-submenu:hover>.dropdown-menu {
+     	display:block;
+ 	}
 }
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
 	.home .grid-item, .blog .grid-item{ width: 50%; }
-	ul.nav li.dropdown:hover > ul.dropdown-menu {
-    	display: block;    
-	}
 }
 
 /* Large Devices, Wide Screens */

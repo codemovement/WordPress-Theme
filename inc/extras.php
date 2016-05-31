@@ -170,3 +170,25 @@ function post_class_filter( $classes, $class, $post_id ){
 	return $classes;
 }
 add_filter( 'post_class', 'post_class_filter', 10, 3 );
+
+/**
+ * Get logo based on image or text for theme. 
+ */
+function masonrypk_logo(){
+	if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
+		the_custom_logo();
+	}else{
+		echo '<a class="navbar-brand" rel="home" href="'. esc_url( home_url( '/' ) ) .'">'; 
+			bloginfo( 'name' );
+		echo "</a>";
+	}
+}
+
+/**
+ * Add bootstrap class to the_custom_logo function. 
+ */
+function custom_logo_output( $html ){
+	$html = str_replace( 'custom-logo-link', 'navbar-brand', $html );
+	return $html;
+}
+add_filter('get_custom_logo', 'custom_logo_output', 10);
