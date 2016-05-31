@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package materializedmasonrypk
+ * @package masonrypk
  */
 
 get_header(); ?>
@@ -36,7 +36,7 @@ get_header(); ?>
 						?>
 					<?php endwhile; ?>
 				</main><!-- #main -->
-				<?php materializedmasonrypk_paging_nav(); ?>
+				<?php masonrypk_paging_nav(); ?>
 			<?php else : ?>
 
 				<?php get_template_part( 'content', 'none' ); ?>
