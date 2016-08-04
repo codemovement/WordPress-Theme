@@ -8,7 +8,7 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package masonrypk
+ * @package Masonry_PK
  */
 get_header(); ?>
 
@@ -30,7 +30,7 @@ get_header(); ?>
 						?>
 					<?php endwhile; ?>
 				</main><!-- #main -->
-				<?php masonrypk_paging_nav(); ?>
+				<?php masonry_pk_paging_nav(); ?>
 			<?php else : ?>
 				<?php get_template_part( 'content', 'none' ); ?>
 			<?php endif; ?>

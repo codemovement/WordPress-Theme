@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package masonrypk
+ * @package Masonry_PK
  */
 ?>
 
@@ -16,7 +16,7 @@
 
 				<?php if ( 'post' == get_post_type() ) : ?>
 				<div class="entry-meta">
-					<?php masonrypk_posted_on(); ?>
+					<?php masonry_pk_posted_on(); ?>
 				</div><!-- .entry-meta -->
 				<?php endif; ?>
 			</header><!-- .entry-header -->
@@ -26,7 +26,7 @@
 			</div><!-- .entry-summary -->
 
 			<footer class="entry-footer">
-				<?php masonrypk_entry_footer(); ?>
+				<?php masonry_pk_entry_footer(); ?>
 			</footer><!-- .entry-footer -->
 		</div> <!-- .entry-container -->
 	</div> <!-- .card -->

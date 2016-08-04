@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features
  *
- * @package masonrypk
+ * @package Masonry_PK
  */
 
 /**
@@ -13,11 +13,11 @@
  * @param array $args Configuration arguments.
  * @return array
  */
-function masonrypk_page_menu_args( $args ) {
+function masonry_pk_page_menu_args( $args ) {
 	$args['show_home'] = true;
 	return $args;
 }
-add_filter( 'wp_page_menu_args', 'masonrypk_page_menu_args' );
+add_filter( 'wp_page_menu_args', 'masonry_pk_page_menu_args' );
 
 /**
  * Adds custom classes to the array of body classes.
@@ -25,7 +25,7 @@ add_filter( 'wp_page_menu_args', 'masonrypk_page_menu_args' );
  * @param array $classes Classes for the body element.
  * @return array
  */
-function masonrypk_body_classes( $classes ) {
+function masonry_pk_body_classes( $classes ) {
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
@@ -33,7 +33,7 @@ function masonrypk_body_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', 'masonrypk_body_classes' );
+add_filter( 'body_class', 'masonry_pk_body_classes' );
 
 if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	/**
@@ -43,7 +43,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	 * @param string $sep Optional separator.
 	 * @return string The filtered title.
 	 */
-	function masonrypk_wp_title( $title, $sep ) {
+	function masonry_pk_wp_title( $title, $sep ) {
 		if ( is_feed() ) {
 			return $title;
 		}
@@ -61,12 +61,12 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 
 		// Add a page number if necessary.
 		if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-			$title .= " $sep " . sprintf( esc_html__( 'Page %s', 'masonrypk' ), max( $paged, $page ) );
+			$title .= " $sep " . sprintf( esc_html__( 'Page %s', 'masonry-pk' ), max( $paged, $page ) );
 		}
 
 		return $title;
 	}
-	add_filter( 'wp_title', 'masonrypk_wp_title', 10, 2 );
+	add_filter( 'wp_title', 'masonry_pk_wp_title', 10, 2 );
 
 	/**
 	 * Title shim for sites older than WordPress 4.1.
@@ -74,12 +74,12 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	 * @link https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
 	 * @todo Remove this function when WordPress 4.3 is released.
 	 */
-	function masonrypk_render_title() {
+	function masonry_pk_render_title() {
 		?>
 		<title><?php wp_title( '|', true, 'right' ); ?></title>
 		<?php
 	}
-	add_action( 'wp_head', 'masonrypk_render_title' );
+	add_action( 'wp_head', 'masonry_pk_render_title' );
 endif;
 
 /**
@@ -94,72 +94,72 @@ endif;
  * @global WP_Query $wp_query WordPress Query object.
  * @return void
  */
-function masonrypk_setup_author() {
+function masonry_pk_setup_author() {
 	global $wp_query;
 
 	if ( $wp_query->is_author() && isset( $wp_query->post ) ) {
 		$GLOBALS['authordata'] = get_userdata( $wp_query->post->post_author );
 	}
 }
-add_action( 'wp', 'masonrypk_setup_author' );
+add_action( 'wp', 'masonry_pk_setup_author' );
 
 /**
  * Adds a class to the previous post link on single post page
  */
-function post_link_attributes_prev($output) {
+function masonry_pk_post_link_attributes_prev($output) {
     $code = 'class="btn btn-warning btn-fab btn-raised mdi-image-navigate-before"';
     return str_replace('<a href=', '<a '.$code.' href=', $output);
 }
-add_filter('previous_post_link', 'post_link_attributes_prev');
+add_filter('previous_post_link', 'masonry_pk_post_link_attributes_prev');
 
 /**
  * Adds a class to the next post link on single post page
  */
-function post_link_attributes_next($output) {
+function masonry_pk_post_link_attributes_next($output) {
     $code = 'class="btn btn-warning btn-fab btn-raised mdi-image-navigate-next"';
     return str_replace('<a href=', '<a '.$code.' href=', $output);
 }
-add_filter('next_post_link', 'post_link_attributes_next');
+add_filter('next_post_link', 'masonry_pk_post_link_attributes_next');
 
 /**
  * Adds a class to the prev post link on blog
  */
-function posts_link_attributes_prev() {
+function masonry_pk_posts_link_attributes_prev() {
     return 'class="btn btn-warning btn-fab btn-raised mdi-image-navigate-before"';
 }
-add_filter('previous_posts_link_attributes', 'posts_link_attributes_prev');
+add_filter('previous_posts_link_attributes', 'masonry_pk_posts_link_attributes_prev');
 
 /**
  * Adds a class to the next post link on blog
  */
-function posts_link_attributes_next() {
+function masonry_pk_posts_link_attributes_next() {
     return 'class="btn btn-warning btn-fab btn-raised mdi-image-navigate-next"';
 }
-add_filter('next_posts_link_attributes', 'posts_link_attributes_next');
+add_filter('next_posts_link_attributes', 'masonry_pk_posts_link_attributes_next');
 
 /**
  * Custom Read More Button
  */
-function modify_read_more_link() {
+function masonry_pk_modify_read_more_link() {
 
-	return '<p><a class="btn btn-danger btn-xs read-more" href="' . get_permalink() . '">'.__( 'Read More', 'masonrypk' ).'</a></p>';
+	return '<p><a class="btn btn-danger btn-xs read-more" href="' . get_permalink() . '">'.__( 'Read More', 'masonry-pk' ).'</a></p>';
 }
-add_filter( 'the_content_more_link', 'modify_read_more_link' );
+add_filter( 'the_content_more_link', 'masonry_pk_modify_read_more_link' );
 
 /**
  * Custom Edit Button
  */
-function custom_edit_post_link($output) {
+function masonry_pk_custom_edit_post_link($output) {
 
  $output = str_replace('class="post-edit-link"', 'class="btn btn-danger btn-xs post-edit-link"', $output);
  return $output;
 }
-add_filter('edit_post_link', 'custom_edit_post_link');
+add_filter('edit_post_link', 'masonry_pk_custom_edit_post_link');
 
 /**
  * Add classes to post_class function. 
  */
-function post_class_filter( $classes, $class, $post_id ){
+function masonry_pk_post_class_filter( $classes, $class, $post_id ){
 	// make filter magic happen here
 	if ( is_sticky( $post_id ) ) 
 		$classes[] = 'grid-item';
@@ -169,12 +169,12 @@ function post_class_filter( $classes, $class, $post_id ){
 		$classes[] = 'grid-item grid-item--width2';
 	return $classes;
 }
-add_filter( 'post_class', 'post_class_filter', 10, 3 );
+add_filter( 'post_class', 'masonry_pk_post_class_filter', 10, 3 );
 
 /**
  * Get logo based on image or text for theme. 
  */
-function masonrypk_logo(){
+function masonry_pk_logo(){
 	if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
 		the_custom_logo();
 	}else{
@@ -187,8 +187,8 @@ function masonrypk_logo(){
 /**
  * Add bootstrap class to the_custom_logo function. 
  */
-function custom_logo_output( $html ){
+function masonry_pk_custom_logo_output( $html ){
 	$html = str_replace( 'custom-logo-link', 'navbar-brand', $html );
 	return $html;
 }
-add_filter('get_custom_logo', 'custom_logo_output', 10);
+add_filter('get_custom_logo', 'masonry_pk_custom_logo_output', 10);

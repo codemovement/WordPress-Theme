@@ -4,7 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <div id="content">
  *
- * @package masonrypk
+ * @package Masonry_PK
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -19,7 +19,7 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'masonrypk' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'masonry-pk' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
 
@@ -34,7 +34,7 @@
 				        <span class="icon-bar"></span>
 				    </button>
 
-					<?php masonrypk_logo(); ?>
+					<?php masonry_pk_logo(); ?>
 	    		</div>
 				<div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
 					<?php
@@ -42,8 +42,8 @@
 			                'theme_location'    => 'primary',
 			                'container'         => false,
 			                'menu_class'        => 'nav navbar-nav navbar-left',
-			                'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-			                'walker'            => new wp_bootstrap_navwalker())
+			                'fallback_cb'       => 'masonry_pk_bootstrap_navwalker::fallback',
+			                'walker'            => new masonry_pk_bootstrap_navwalker())
 			            );
 		        	?>
 	    		</div> <!-- .navbar-collapse -->

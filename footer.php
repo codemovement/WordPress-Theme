@@ -4,7 +4,7 @@
  *
  * Contains the closing of the #content div and all content after
  *
- * @package masonrypk
+ * @package Masonry_PK
  */
 ?>
 
@@ -16,7 +16,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="site-info pull-right">
-						<?php printf( __( '%1$s | %2$s.', 'masonrypk' ), 'Proudly powered by WordPress', 'Materialized Masonry PK by <a href="http://www.codemovement.pk/">CodeMovement</div>' ); ?>
+						<?php printf( __( '%1$s | %2$s.', 'masonry-pk' ), 'Proudly powered by WordPress', 'Materialized Masonry PK by <a href="http://codemovement.pk">CodeMovement</div>' ); ?>
 					</div><!-- .site-info -->
 				</div> <!-- col-lg-12 -->
 			</div><!-- .row -->

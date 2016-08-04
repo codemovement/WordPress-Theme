@@ -2,7 +2,7 @@
 /**
  * The template for displaying search results pages.
  *
- * @package masonrypk
+ * @package Masonry_PK
  */
 
 get_header(); ?>
@@ -16,7 +16,7 @@ get_header(); ?>
 			<?php if ( have_posts() ) : ?>
 
 				<header class="page-header">
-					<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'masonrypk' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+					<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'masonry-pk' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 				</header><!-- .page-header -->
 
 				<?php /* Start the Loop */ ?>
@@ -33,7 +33,7 @@ get_header(); ?>
 
 				<?php endwhile; ?>
 
-				<?php masonrypk_paging_nav(); ?>
+				<?php masonry_pk_paging_nav(); ?>
 
 			<?php else : ?>
 
