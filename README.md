@@ -8,5 +8,9 @@ Upload the theme to your WordPress Directory in the wp-content/themes/ directory
 
 ## Releases
 
+1.0.1
+- Prefixing all functions, filter and hooks.
+- Load masonry from WordPress.  
+
 1.0.0
 - Intial releases

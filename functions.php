@@ -115,7 +115,7 @@ function masonry_pk_scripts() {
 
 	wp_enqueue_script( 'mwp-material-js', get_template_directory_uri() . '/js/material.min.js', array('jquery'), '', true );
 
-	wp_enqueue_script( 'masonry-js', get_template_directory_uri() . '/js/masonry.pkgd.min.js', array('jquery'), '', true );
+	wp_enqueue_script( 'jquery-masonry', array('jquery'), '', true );
 	
 	wp_enqueue_script( 'main-js', get_template_directory_uri() . '/js/main.js', array('jquery'), '', true );
 
