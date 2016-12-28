@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Masonry PK\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-12-23 13:12+0000\n"
-"PO-Revision-Date: 2016-12-23 14:11+0000\n"
-"Last-Translator: admin <test@gmail.com>\n"
+"PO-Revision-Date: 2016-12-27 15:14+0000\n"
+"Last-Translator: admin <review@gmail.com>\n"
 "Language-Team: Urdu\n"
 "Language: ur\n"
 "Plural-Forms: nplurals=2; plural=n != 1\n"
@@ -121,7 +121,7 @@ msgstr ""
 msgid "Pages:"
 msgstr "صفحات:"
 
-#: content-page.php:34 inc/comments-callback.php:19 
+#: content-page.php:34 inc/comments-callback.php:19
 #: inc/comments-callback.php:44 inc/template-tags.php:124
 msgid "Edit"
 msgstr "ایڈٹ"
@@ -271,7 +271,7 @@ msgstr "دن: %s"
 #: inc/template-tags.php:151
 msgctxt "daily archives date format"
 msgid "F j, Y"
-msgstr "F j, Y"
+msgstr "j F, Y"
 
 #: inc/template-tags.php:153
 msgctxt "post format archive title"
@@ -335,15 +335,13 @@ msgstr "آرکائیو"
 
 #. Name of the theme
 msgid "Masonry PK"
-msgstr "Masonry PK"
+msgstr "مسونری پک"
 
 #. Description of the theme
 msgid ""
 "Material Design based on Masonry Cascading grid layout WordPress Theme for "
 "Blog."
-msgstr ""
-"Material Design based on Masonry Cascading grid layout WordPress Theme for "
-"Blog."
+msgstr "مٹیریل ڈیزائن بیسڈ on"
 
 #. URI of the theme
 msgid "http://codemovement.pk"
@@ -351,7 +349,7 @@ msgstr "http://codemovement.pk"
 
 #. Author of the theme
 msgid "Code Movement"
-msgstr "Code Movement"
+msgstr "کوڈموومنٹ"
 
 #. Author URI of the theme
 msgid "https://github.com/codemovement"
