@@ -41,7 +41,7 @@
 			            wp_nav_menu( array(
 			                'theme_location'    => 'primary',
 			                'container'         => false,
-			                'menu_class'        => 'nav navbar-nav navbar-left',
+			                'menu_class'        => 'nav navbar-nav',
 			                'fallback_cb'       => 'masonry_pk_bootstrap_navwalker::fallback',
 			                'walker'            => new masonry_pk_bootstrap_navwalker())
 			            );
