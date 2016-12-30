@@ -70,9 +70,9 @@ if ( post_password_required() ) {
 
 		$comments_args = array(
         // change the title of send button 
-        'label_submit'=>'Submit',
+        'label_submit'=> _e( 'Submit', 'masonry-pk' ),
         // change the title of the reply section
-        'title_reply'=>'Leave a Comment',
+        'title_reply'=> _e( 'Leave a Comment', 'masonry-pk' ),
         // remove "Text or HTML to be displayed after the set of comment fields"
         'comment_notes_after' => '',
         // redefine your own textarea (the comment body)
