@@ -122,6 +122,9 @@ function masonry_pk_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+	if( is_rtl() ){
+		wp_enqueue_style( 'mwp-bootstrap-rtl-styles', get_template_directory_uri() . '/css/bootstrap-rtl.min.css', array('mwp-bootstrap-styles'), '3.3.4', 'all' );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'masonry_pk_scripts' );
 
