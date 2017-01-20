@@ -23,12 +23,12 @@
 				<?php elseif ( is_search() ) : ?>
 
 					<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'masonry-pk' ); ?></p>
-					<?php get_search_form(); ?>
+					<?php echo esc_html( get_search_form() ); ?>
 
 				<?php else : ?>
 
 					<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'masonry-pk' ); ?></p>
-					<?php get_search_form(); ?>
+					<?php echo esc_html( get_search_form() ); ?>
 
 				<?php endif; ?>
 			</div><!-- .page-content -->

@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Masonry PK\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-23 13:12+0000\n"
-"PO-Revision-Date: 2016-12-27 15:14+0000\n"
-"Last-Translator: admin <review@gmail.com>\n"
+"POT-Creation-Date: 2017-01-10 14:53+0000\n"
+"PO-Revision-Date: 2017-01-10 15:11+0000\n"
+"Last-Translator: admin <test@gmail.com>\n"
 "Language-Team: Urdu\n"
 "Language: ur\n"
 "Plural-Forms: nplurals=2; plural=n != 1\n"
@@ -12,6 +12,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco - https://localise.biz/"
+
+#: comments.php:73
+msgid "Submit"
+msgstr "جمع کریں"
+
+#: comments.php:75
+msgid "Leave a Comment"
+msgstr "تبصرہ کریں"
 
 #: inc/template-tags.php:55
 msgctxt "Previous post link"
@@ -22,50 +30,6 @@ msgstr ""
 msgctxt "Next post link"
 msgid ""
 msgstr ""
-
-#: comments.php:28
-#, php-format
-msgctxt "comments title"
-msgid "One thought on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] "&ldquo;%2$s&rdquo; پر ایک رائے"
-msgstr[1] "&ldquo;%2$s&rdquo; پر ایک رائے"
-
-#: content-none.php:25
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
-msgstr ""
-"معذرت، لیکن آپ کی تلاش کے مطابق کچھ دستیاب نہیں۔ کچھ مختلف الفاظ کے ساتھ "
-"دوبارہ کوشش کریں۔"
-
-#: content-none.php:30
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
-msgstr ""
-"ایسا لگتا ہے کہ کچھ بھی اس مقام پر پایا گیا تھا کی طرح. ہو سکتا ہے کہ ایک "
-"سرچ ذیل لنکس یا میں سے ایک کی کوشش کریں؟"
-
-#: functions.php:49
-msgid "Primary Menu"
-msgstr "پرائمری مینو"
-
-#: header.php:22
-msgid "Skip to content"
-msgstr "مواد پر جائیں"
-
-#: inc/comments-callback.php:57
-msgid "reply to comment"
-msgstr "تبصرے کا جواب"
-
-#: inc/customizer.php:59
-msgid "Navigation Background Color"
-msgstr "نیویگیشن پس منظر کا رنگ"
-
-#: inc/customizer.php:65
-msgid "Complimentary Color"
-msgstr "اعزازی رنگ"
 
 #: 404.php:20
 msgid "Oops! That page can&rsquo;t be found."
@@ -88,6 +52,14 @@ msgstr "سب سے زیادہ استعمال زمروں"
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
 msgstr "ماہانہ محفوظ شدہ دستاویزات میں تلاش کرنے کی کوشش کریں. %1$s"
+
+#: comments.php:28
+#, php-format
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "&ldquo;%2$s&rdquo; پر ایک رائے"
+msgstr[1] "&ldquo;%2$s&rdquo; پر ایک رائے"
 
 #: comments.php:35 comments.php:52
 msgid "Comment navigation"
@@ -117,6 +89,22 @@ msgstr ""
 "آپ کی پہلی پوسٹ شائع کرنے کے لئے تیار ہیں؟ <a href=\"%1$s\">یہاں شروع "
 "کریں</a>."
 
+#: content-none.php:25
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"معذرت، لیکن آپ کی تلاش کے مطابق کچھ دستیاب نہیں۔ کچھ مختلف الفاظ کے ساتھ "
+"دوبارہ کوشش کریں۔"
+
+#: content-none.php:30
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"ایسا لگتا ہے کہ کچھ بھی اس مقام پر پایا گیا تھا کی طرح. ہو سکتا ہے کہ ایک "
+"سرچ ذیل لنکس یا میں سے ایک کی کوشش کریں؟"
+
 #: content-page.php:27 content-single.php:29 content.php:42
 msgid "Pages:"
 msgstr "صفحات:"
@@ -136,9 +124,17 @@ msgstr "مطالعہ جاری رکھیں%s <span class=\"meta-nav\">&rarr;</span
 msgid "%1$s | %2$s."
 msgstr "%1$s | %2$s."
 
+#: functions.php:49
+msgid "Primary Menu"
+msgstr "پرائمری مینو"
+
 #: functions.php:87
 msgid "Sidebar"
 msgstr "بغلی ‌پٹی"
+
+#: header.php:22
+msgid "Skip to content"
+msgstr "مواد پر جائیں"
 
 #: search.php:19
 #, php-format
@@ -162,6 +158,18 @@ msgstr "%1$s at %2$s"
 #: inc/comments-callback.php:49
 msgid "Your comment is awaiting moderation."
 msgstr "آپ کی رائے اعتدال پسندی کا انتظار کر رہا ہے."
+
+#: inc/comments-callback.php:57
+msgid "reply to comment"
+msgstr "تبصرے کا جواب"
+
+#: inc/customizer.php:59
+msgid "Navigation Background Color"
+msgstr "نیویگیشن پس منظر کا رنگ"
+
+#: inc/customizer.php:65
+msgid "Complimentary Color"
+msgstr "اعزازی رنگ"
 
 #: inc/customizer.php:71
 msgid "Link Color"
